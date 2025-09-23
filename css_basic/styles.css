@@ -1,37 +1,68 @@
-/* styles.css */
-
-/* Body: flex container, column layout */
+/* General page styling */
 body {
-  display: flex;
-  flex-direction: column;
-  height: 100vh; /* take full viewport height */
   margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
 }
 
-/* Main: flex container, row layout */
+/* Header navigation */
+header {
+  background-color: #222;
+  color: white;
+  padding: 10px 20px;
+}
+
+header ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+header ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+/* Logo styling */
+.logo {
+  font-size: 2rem;  /* make it bigger than normal text */
+  margin-right: 30px; /* space between logo and menu */
+}
+
+/* Main layout */
 main {
   display: flex;
-  flex-direction: row;
-  flex: auto; /* grow to fill available space */
+  gap: 20px;
+  padding: 20px;
 }
 
-/* Article: 2/3 width, scrollable */
+/* Article */
 article {
-  flex: 2;
-  overflow-y: auto;
-  padding: 1rem;
+  flex: 3;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Aside: 1/3 width, scrollable */
+/* Sidebar */
 aside {
   flex: 1;
-  overflow-y: auto;
-  padding: 1rem;
+  background: #eee;
+  padding: 20px;
+  border-radius: 10px;
 }
 
-/* Header and footer: don’t shrink, stay full width */
-header, footer {
-  flex-shrink: 0;
-  padding: 1rem;
-  background: #ddd;
+/* Footer */
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
 }
