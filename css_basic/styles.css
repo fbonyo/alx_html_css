@@ -1,0 +1,37 @@
+/* styles.css */
+
+/* Body: flex container, column layout */
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* take full viewport height */
+  margin: 0;
+}
+
+/* Main: flex container, row layout */
+main {
+  display: flex;
+  flex-direction: row;
+  flex: auto; /* grow to fill available space */
+}
+
+/* Article: 2/3 width, scrollable */
+article {
+  flex: 2;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+/* Aside: 1/3 width, scrollable */
+aside {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+/* Header and footer: don’t shrink, stay full width */
+header, footer {
+  flex-shrink: 0;
+  padding: 1rem;
+  background: #ddd;
+}
