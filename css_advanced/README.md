@@ -14,6 +14,21 @@ The design for this project was provided in a Figma file, which guided the layou
 You can view the original design here:
 [Figma Design Page](https://www.figma.com/design/rTfoZA04VZDAnwXKLVn4TG/Homepage--Copy-?node-id=0-1&p=f&t=iwyk8YouTxOufNL5-0)
 
+## Project Details
+
+... (other details)
+
+## Files
+
+* `index.html`: The main HTML file containing the structure of the webpage.
+* `styles.css`: The stylesheet that contains all the CSS rules for the design.
+* `README.md`: This file, providing an overview of the project.
+
+## CSS Styling
+
+This project focuses on implementing the provided Figma design using pure CSS. All styling, including layout, colors, and typography, is handled in the `styles.css` file. The design was recreated using a mobile-first approach to ensure responsiveness across different devices.
+
+
 ## Project Status
 
 This project is complete and meets all the specified requirements.
