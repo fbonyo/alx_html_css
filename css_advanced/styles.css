@@ -306,71 +306,115 @@ body {
 .video-footer span {
   
 }
-.membership {
-  background: #241B41; /* Dark blue-purple background */
-  color: white;
+.membership-section {
+  background-color: #241B41; /* The dark purple background */
+  color: #fff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.membership-heading {
+  font-size: 32px;
+  color: #A150D5; /* A vibrant purple for the heading */
+  margin-bottom: 50px;
+}
+
+.membership-cards-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Allows cards to wrap to the next line on smaller screens */
+  gap: 30px; /* Space between the cards */
+  max-width: 1000px;
+  margin: 0 auto 50px auto;
+}
+
+.membership-card {
+  width: 200px; /* Adjust card width as needed */
+  text-align: center;
+}
+
+.membership-card .smile-icon {
+  width: 50px; /* Size of the smile icon */
+  height: 50px;
+  margin-bottom: 15px;
+}
+
+.membership-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.membership-card p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #A150D5; /* Same vibrant purple as the heading */
+  color: #fff;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 25px; /* Rounded corners for the button */
+  font-weight: bold;
+}
+/* FAQ Section */
+.faq {
+  background: #fff;
   padding: 80px 40px;
   text-align: center;
 }
 
-.membership h2 {
-  font-size: 32px;
-  margin-bottom: 50px;
-  font-weight: 700; /* Bolder font weight */
-  color: #FFFFFF; /* Pure white */
-  font-family: 'Source Sans Pro', sans-serif; /* Correct font family */
+.faq h2 {
+  font-size: 42px;
+  margin-bottom: 60px;
+  font-weight: 300;
+  color: #071629;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
-.membership-grid {
+.faq-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
   max-width: 1200px;
-  margin: 0 auto 50px;
+  margin: 0 auto;
 }
 
-.membership-item {
+.faq-column {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 20px;
+  gap: 40px;
 }
 
-.membership-icon {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  object-fit: contain;
+.faq-item {
+  text-align: left;
 }
 
-.membership-item h3 {
+.faq-item h3 {
   font-size: 18px;
-  font-weight: 600;
-  color: #FFFFFF; /* White color */
+  font-weight: 700;
+  color: #071629;
+  margin-bottom: 15px;
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-.membership-item p {
+.faq-item p {
   font-size: 14px;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
+  line-height: 1.6;
+  color: #6c757d;
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-.membership-cta {
-  display: inline-block;
-  background: #C271FF; /* Purple button */
-  color: white;
-  padding: 12px 30px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 600;
-  font-family: 'Source Sans Pro', sans-serif;
-  transition: all 0.3s;
-  font-size: 14px;
-}
-
-.membership-cta:hover {
-  background: #b15ef5;
-  transform: translateY(-2px);
+/* Responsive Design */
+@media (max-width: 768px) {
+  .faq-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .faq h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
 }
