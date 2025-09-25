@@ -306,3 +306,71 @@ body {
 .video-footer span {
   
 }
+.membership {
+  background: #241B41; /* Dark blue-purple background */
+  color: white;
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.membership h2 {
+  font-size: 32px;
+  margin-bottom: 50px;
+  font-weight: 700; /* Bolder font weight */
+  color: #FFFFFF; /* Pure white */
+  font-family: 'Source Sans Pro', sans-serif; /* Correct font family */
+}
+
+.membership-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto 50px;
+}
+
+.membership-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.membership-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+.membership-item h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #FFFFFF; /* White color */
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.membership-item p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.membership-cta {
+  display: inline-block;
+  background: #C271FF; /* Purple button */
+  color: white;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: 'Source Sans Pro', sans-serif;
+  transition: all 0.3s;
+  font-size: 14px;
+}
+
+.membership-cta:hover {
+  background: #b15ef5;
+  transform: translateY(-2px);
+}
