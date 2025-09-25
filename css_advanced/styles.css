@@ -1,0 +1,148 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap');
+/* Assuming you have Spin Cycle OT as a local font */
+/* @font-face { ... } */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #fff;
+  background: #111;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.header .logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.header ul {
+  display: flex;
+  list-style: none;
+}
+
+.header ul li {
+  margin-left: 30px;
+}
+
+.header ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+  transition: opacity 0.3s;
+}
+
+.header ul li a:hover {
+  opacity: 0.7;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url("images/object.png") no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.0);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-size: 64px;
+  font-weight: 900;
+}
+
+.hero .tags {
+  margin: 15px 0;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.cta {
+  display: inline-block;
+  background: linear-gradient(to right, #a445f0, #d94cf0);
+  padding: 12px 30px;
+  border-radius: 25px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 20px 0;
+  transition: transform 0.3s;
+}
+
+.cta:hover {
+  transform: scale(1.05);
+}
+
+.subtext {
+  margin: 25px 0;
+  font-size: 18px;
+}
+
+.highlight {
+  color: #a445f0;
+  font-weight: bold;
+}
+
+/* Profiles */
+.profiles {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  gap: 40px;
+}
+
+.profile {
+  text-align: center;
+  max-width: 180px;
+}
+
+.profile img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 12px;
+  border: 3px solid #fff;
+}
+
+.profile h3 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.profile p {
+  font-size: 13px;
+  color: #ccc;
+}
