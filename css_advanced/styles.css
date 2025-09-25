@@ -146,3 +146,47 @@ body {
   font-size: 13px;
   color: #ccc;
 }
+.quote {
+  background: #a445f0; /* purple background */
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quote-container {
+  display: flex;
+  align-items: center;
+  max-width: 900px;
+  gap: 40px;
+}
+
+.quote-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  object-fit: cover;
+}
+
+.quote-text {
+  color: #fff;
+  max-width: 600px;
+}
+
+.quote-message {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.quote-name {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.quote-role {
+  font-style: italic;
+  font-size: 14px;
+  opacity: 0.9;
+}
