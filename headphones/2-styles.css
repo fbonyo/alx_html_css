@@ -261,6 +261,24 @@ body {
 /* ========================================================================= */
 
 /* Results Row Layout (for 4 columns) */
+/* ========================================================================= */
+/* 7. "Our Results" Section Styling (UPDATED) */
+/* ========================================================================= */
+
+#our-results {
+    /* Set the background image and positioning */
+    background-image: url('images/headphones_hero_2.jpg');
+    background-size: cover; /* Cover the entire section */
+    background-position: center top; /* Position the image */
+    background-repeat: no-repeat;
+    
+    /* Ensure text and content are layered over the image */
+    position: relative;
+    /* Optional: You may want to darken the image slightly with an overlay for contrast. 
+       We will skip the overlay for simplicity unless you need it. */
+}
+
+/* ... existing .results-row, .col-result, .pentagone styles follow ... */
 .results-row {
     display: flex;
     justify-content: space-between;
