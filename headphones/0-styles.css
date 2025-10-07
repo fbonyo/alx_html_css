@@ -1,0 +1,210 @@
+/* ========================================================================= */
+/* 0. CSS Reset & Global Foundations */
+/* ========================================================================= */
+*, *::before, *::after {
+    /* Simple CSS reset to remove default padding/margin and use border-box */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base styles for the entire page */
+body {
+    /* Setting a dark background and white text based on the design */
+    background-color: #071629; /* A dark navy/black based on the design */
+    color: #FFFFFF;
+    
+    /* Using a standard fallback for the required font */
+    font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+}
+
+/* ========================================================================= */
+/* 1. Global Variables & Fonts */
+/* ========================================================================= */
+:root {
+    /* MANDATORY: Accent Red Color for links/buttons */
+    --color-primary: #FF6565; 
+    
+    /* Used for the dark background color */
+    --color-dark-bg: #071629; 
+    
+    /* MANDATORY: Max width for content */
+    --max-width: 1000px; 
+}
+
+/* Global H1/Heading styles (Assume Spin-Cycle-OT is applied here via @font-face or external link) */
+
+/* ========================================================================= */
+/* 2. Container (Max Width & Center) */
+/* ========================================================================= */
+.container {
+    /* MANDATORY: Enforces the 1000px centered max width requirement */
+    width: 90%; 
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+/* ========================================================================= */
+/* 3. Header/Hero Styling (Desktop First) */
+/* ========================================================================= */
+.hero-section {
+    /* The image shows a full-width header with the background picture */
+    background-image: url('images/headphones_hero_1.jpg'); /* Placeholder for your asset */
+    background-size: cover;
+    background-position: center;
+    padding-top: 50px; 
+    padding-bottom: 250px; 
+    position: relative; /* Needed for any absolute positioning inside */
+}
+
+/* Navbar Layout (Desktop) */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 160px; /* Placeholder width based on typical logo size */
+    height: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px; 
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: inherit; /* Inherits white color */
+    font-weight: 600;
+}
+
+/* MANDATORY: Link Interactions */
+.nav-links a:hover,
+.nav-links a:active {
+    color: var(--color-primary); /* #FF6565 */
+}
+
+/* Menu Toggle (Hidden by Default on Desktop) */
+#menu-toggle {
+    display: none;
+}
+.menu-icon {
+    display: none; /* Hide hamburger on desktop */
+}
+
+
+/* Hero Content Styling */
+.hero-content {
+    text-align: center;
+    padding-top: 150px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.hero-content .subtitle {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.hero-content .description {
+    font-size: 16px;
+    opacity: 0.8;
+    margin-top: 50px;
+    line-height: 1.6;
+}
+
+/* Call To Action Button */
+.cta-button {
+    background-color: var(--color-primary); /* #FF6565 */
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+/* MANDATORY: Button Interactions */
+.cta-button:hover,
+.cta-button:active {
+    opacity: 0.9;
+}
+
+
+/* ========================================================================= */
+/* 4. Responsive Design (Mobile View: max-width 480px) */
+/* ========================================================================= */
+@media (max-width: 480px) {
+    
+    /* Navbar Layout Re-order for Mobile */
+    .navbar {
+        /* Distributes space for logo and icon */
+        justify-content: space-between; 
+        padding: 0 5%; /* Add some padding to the sides */
+    }
+
+    /* ------------------------------------------- */
+    /* Mobile Menu Icon (Hamburger) - POSITION LEFT */
+    /* ------------------------------------------- */
+    .menu-icon {
+        display: block; 
+        /* MANDATORY: Moves the icon to the start of the flex container (left) */
+        order: -1; 
+        cursor: pointer;
+        z-index: 10;
+        
+        /* Placeholder for styling the icon itself */
+        font-size: 24px; 
+        color: white;
+        /* Replace with actual image/SVG if required by Figma */
+    }
+
+    /* ------------------------------------------- */
+    /* Navigation Links (Hidden Mobile Menu) */
+    /* ------------------------------------------- */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background-color: var(--color-dark-bg);
+        
+        /* Absolute position to cover the full width below the header */
+        position: absolute; 
+        top: 80px; /* Position below the header bar */
+        left: 0;
+        padding: 20px 0;
+        z-index: 5;
+    }
+    
+    .nav-links li {
+        padding: 10px 0;
+    }
+
+    /* Show the menu when the checkbox is checked */
+    #menu-toggle:checked ~ .nav-links {
+        display: flex;
+    }
+    
+    /* Adjustments for Mobile Hero Content */
+    .hero-content h1 {
+        font-size: 32px;
+    }
+    .hero-content .subtitle {
+        font-size: 16px;
+    }
+    .hero-content .description {
+        /* Hide the long description on small mobile to match the provided screenshot */
+        display: none; 
+    }
+}
