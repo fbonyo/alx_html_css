@@ -1,0 +1,334 @@
+/* ========================================================================= */
+/* 0. CSS Reset & Global Foundations */
+/* ========================================================================= */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #071629; 
+    color: #FFFFFF;
+    font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+}
+
+/* ========================================================================= */
+/* 1. Global Variables & Fonts */
+/* ========================================================================= */
+:root {
+    --color-primary: #FF6565; 
+    --color-dark-bg: #071629; 
+    --max-width: 1000px; 
+}
+
+/* ========================================================================= */
+/* 2. Container (Max Width & Center) */
+/* ========================================================================= */
+.container {
+    width: 90%; 
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+/* ========================================================================= */
+/* 3. Header/Hero Styling (Desktop First) */
+/* ========================================================================= */
+.hero-section {
+    background-image: url('images/headphones_hero_1.jpg'); 
+    background-size: cover;
+    background-position: center;
+    padding-top: 50px; 
+    padding-bottom: 250px; 
+    position: relative; 
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 160px; 
+    height: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px; 
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: inherit; 
+    font-weight: 600;
+}
+
+/* MANDATORY: Link Interactions */
+.nav-links a:hover,
+.nav-links a:active {
+    color: var(--color-primary); 
+}
+
+#menu-toggle {
+    display: none;
+}
+.menu-icon {
+    display: none; 
+}
+
+.hero-content {
+    text-align: center;
+    padding-top: 150px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.hero-content .subtitle {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.hero-content .description {
+    font-size: 16px;
+    opacity: 0.8;
+    margin-top: 50px;
+    line-height: 1.6;
+}
+
+.cta-button {
+    background-color: var(--color-primary); 
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+/* MANDATORY: Button Interactions */
+.cta-button:hover,
+.cta-button:active {
+    opacity: 0.9;
+}
+
+/* ========================================================================= */
+/* 4. Responsive Design (Mobile View: max-width 480px) */
+/* ========================================================================= */
+@media (max-width: 480px) {
+    
+    .navbar {
+        justify-content: space-between; 
+        padding: 0 5%; 
+    }
+
+    /* FIX: Menu Icon on the LEFT using order: -1 */
+    .menu-icon {
+        display: block; 
+        order: -1; /* Pushes the menu icon to the far left */
+        cursor: pointer;
+        z-index: 10;
+        font-size: 24px; 
+        color: white;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background-color: var(--color-dark-bg);
+        position: absolute; 
+        top: 80px; 
+        left: 0;
+        padding: 20px 0;
+        z-index: 5;
+    }
+    
+    .nav-links li {
+        padding: 10px 0;
+    }
+
+    #menu-toggle:checked ~ .nav-links {
+        display: flex;
+    }
+    
+    .hero-content h1 {
+        font-size: 32px;
+    }
+    .hero-content .subtitle {
+        font-size: 16px;
+    }
+    .hero-content .description {
+        display: none; 
+    }
+}
+
+/* ========================================================================= */
+/* 5. "What We Do..." Section Styling */
+/* ========================================================================= */
+
+.section-padding {
+    padding: 100px 0; 
+}
+
+.text-center {
+    text-align: center;
+}
+
+.section-header {
+    /* Constraining width to match the narrow text block in the design */
+    max-width: 450px; 
+    margin: 0 auto 100px auto; /* Increased margin for spacing */
+}
+
+.section-header h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.section-header .section-description {
+    line-height: 1.6;
+    opacity: 0.8;
+}
+
+/* Feature Row Layout (for 4 columns) */
+.features-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px; 
+}
+
+/* Icon Styling (Targets classes from the icon font CSS) */
+.holberton-icon {
+    font-size: 80px; 
+    color: var(--color-primary); 
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* Individual Feature Component */
+.col-feature {
+    flex: 1; 
+    text-align: center;
+}
+
+.col-feature h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.col-feature p {
+    font-size: 14px;
+    line-height: 1.5;
+    opacity: 0.7;
+}
+
+
+/* ========================================================================= */
+/* 6. Mobile Responsiveness for "What We Do..." (max-width 480px) */
+/* ========================================================================= */
+@media (max-width: 480px) {
+    
+    .section-padding {
+        padding: 50px 0;
+    }
+    
+    /* Stack the feature columns vertically on mobile */
+    .features-row {
+        flex-direction: column;
+        gap: 40px; 
+    }
+    
+    /* Ensure the component is centered when stacked */
+    .col-feature {
+        flex-basis: 100%;
+        max-width: 80%; 
+        margin: 0 auto; 
+    }
+}
+/* ========================================================================= */
+/* 7. "Our Results" Section Styling */
+/* ========================================================================= */
+
+/* Results Row Layout (for 4 columns) */
+.results-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px; 
+    padding: 50px 0;
+}
+
+.col-result {
+    flex: 1;
+    text-align: center;
+}
+
+/* Pentagon Container */
+.pentagone {
+    /* Set dimensions for the pentagon container */
+    width: 150px; 
+    height: 150px;
+    margin: 0 auto 30px auto; 
+    position: relative; /* Needed to position the background image */
+    
+    /* Center the text inside the pentagon */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Add the pentagone background image */
+    background-image: url('images/pentagone.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.pentagone h2 {
+    color: white;
+    font-size: 48px; 
+    /* The design uses a bold, large font for the percentage */
+    font-weight: 700; 
+    line-height: 1; /* Ensure text is vertically centered */
+}
+
+.col-result p {
+    font-size: 14px;
+    line-height: 1.5;
+    opacity: 0.8;
+}
+
+/* ========================================================================= */
+/* 8. Mobile Responsiveness for "Our Results" (max-width 480px) */
+/* ========================================================================= */
+@media (max-width: 480px) {
+    
+    .results-row {
+        flex-direction: column;
+        gap: 20px; /* Reduced gap for stacking */
+        padding: 20px 0;
+    }
+    
+    .col-result {
+        flex-basis: 100%;
+        max-width: 80%; 
+        margin: 0 auto; 
+    }
+    
+    .pentagone {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .pentagone h2 {
+        font-size: 40px;
+    }
+}
