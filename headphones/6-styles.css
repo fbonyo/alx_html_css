@@ -1,0 +1,473 @@
+/* ========================================================================= */
+/* 0. CSS Reset & Global Foundations */
+/* ========================================================================= */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #071629; 
+    color: #FFFFFF; 
+    /* NOTE: You should link the Google fonts (Source Sans Pro, Spin-Cycle-OT) in your HTML <head> */
+    font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+}
+
+/* ========================================================================= */
+/* 1. Global Variables & Fonts */
+/* ========================================================================= */
+:root {
+    --color-primary: #FF6565; 
+    --color-dark-bg: #071629; 
+    --max-width: 1000px; 
+}
+
+/* ========================================================================= */
+/* 2. Container (Max Width & Center) */
+/* ========================================================================= */
+.container {
+    width: 90%; 
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+/* ========================================================================= */
+/* 3. Header/Hero Styling (Desktop First) */
+/* ========================================================================= */
+.hero-section {
+    background-image: url('images/headphones_hero_1.jpg'); 
+    background-size: cover;
+    background-position: center;
+    padding-top: 50px; 
+    padding-bottom: 250px; 
+    position: relative; 
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 160px; 
+    height: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px; 
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: inherit; 
+    font-weight: 600;
+}
+
+.nav-links a:hover,
+.nav-links a:active {
+    color: var(--color-primary); 
+}
+
+#menu-toggle {
+    display: none;
+}
+.menu-icon {
+    display: none; 
+}
+
+.hero-content {
+    text-align: center;
+    padding-top: 150px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.hero-content .subtitle {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.hero-content .description {
+    font-size: 16px;
+    opacity: 0.8;
+    margin-top: 50px;
+    line-height: 1.6;
+}
+
+.cta-button {
+    background-color: var(--color-primary); 
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    text-transform: uppercase; 
+}
+
+.cta-button:hover,
+.cta-button:active {
+    opacity: 0.9;
+}
+
+/* ========================================================================= */
+/* 4. Responsive Design (Mobile View: max-width 480px) */
+/* ========================================================================= */
+@media (max-width: 480px) {
+    
+    .navbar {
+        justify-content: space-between; 
+        padding: 0 5%; 
+    }
+
+    .menu-icon {
+        display: block; 
+        order: -1; 
+        cursor: pointer;
+        z-index: 10;
+        font-size: 24px; 
+        color: white;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background-color: var(--color-dark-bg);
+        position: absolute; 
+        top: 80px; 
+        left: 0;
+        padding: 20px 0;
+        z-index: 5;
+    }
+    
+    .nav-links li {
+        padding: 10px 0;
+    }
+
+    #menu-toggle:checked ~ .nav-links {
+        display: flex;
+    }
+    
+    .hero-content h1 {
+        font-size: 32px;
+    }
+    .hero-content .subtitle {
+        font-size: 16px;
+    }
+    .hero-content .description {
+        display: none; 
+    }
+}
+
+/* ========================================================================= */
+/* 5. Section Titles and Foundations (Used by all sections) */
+/* ========================================================================= */
+.section-padding {
+    padding: 100px 0; 
+}
+
+.text-center {
+    text-align: center;
+}
+
+.section-header {
+    max-width: 450px; 
+    margin: 0 auto 100px auto; 
+}
+
+/* Global H2 Fix: Force white color for dark backgrounds (overridden below for white sections) */
+.section-header h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #FFFFFF !important; 
+}
+
+.section-header .section-description {
+    line-height: 1.6;
+    opacity: 0.8;
+}
+
+/* ========================================================================= */
+/* 6. "What We Do..." Section Styling (FIXED WHITE BACKGROUND) */
+/* ========================================================================= */
+
+#what-we-do {
+    background-color: #FFFFFF; 
+    color: #071629; 
+    padding: 100px 0; 
+}
+
+/* Override global H2 rule to make H2 dark on white background */
+#what-we-do .section-header h2 {
+    color: #071629 !important; 
+}
+
+/* Ensure all other text is dark */
+#what-we-do .section-header .section-description,
+#what-we-do .col-feature h3,
+#what-we-do .col-feature p {
+    color: #071629; 
+    opacity: 0.8; 
+}
+
+.features-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px; 
+}
+
+.holberton-icon {
+    font-size: 80px; 
+    color: var(--color-primary); 
+    display: block;
+    margin-bottom: 20px;
+}
+
+.col-feature {
+    flex: 1; 
+    text-align: center;
+}
+
+@media (max-width: 480px) {
+    
+    #what-we-do.section-padding { 
+        padding: 50px 0;
+    }
+    
+    .features-row {
+        flex-direction: column;
+        gap: 40px; 
+    }
+    
+    .col-feature {
+        flex-basis: 100%;
+        max-width: 80%; 
+        margin: 0 auto; 
+    }
+}
+
+/* ========================================================================= */
+/* 7. "Our Results" Section Styling (Pentagon drawn with CSS) */
+/* ========================================================================= */
+
+#our-results {
+    background-image: url('images/headphones_hero_2.jpg');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.results-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px; 
+    padding: 50px 0;
+}
+
+.col-result {
+    flex: 1;
+    text-align: center;
+}
+
+.pentagone {
+    width: 150px; 
+    height: 150px;
+    margin: 0 auto 30px auto; 
+    position: relative; 
+    
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+    
+    /* FIX FOR TASK 6: Draw the pentagon shape using clip-path instead of image */
+    background-color: var(--color-primary); 
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+}
+
+.pentagone h2 {
+    color: white;
+    font-size: 48px; 
+    font-weight: 700; 
+    line-height: 1; 
+    margin-bottom: 5px; 
+}
+
+.pentagone p {
+    color: white;
+    font-size: 12px; 
+    line-height: 1.2;
+    text-align: center;
+    padding: 0 10px; 
+    margin-top: -10px; 
+    font-weight: 600;
+}
+
+@media (max-width: 480px) {
+    
+    .results-row {
+        flex-direction: column;
+        gap: 20px; 
+        padding: 20px 0;
+    }
+    
+    .col-result {
+        flex-basis: 100%;
+        max-width: 80%; 
+        margin: 0 auto; 
+    }
+    
+    .pentagone {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .pentagone h2 {
+        font-size: 40px;
+    }
+}
+
+/* ========================================================================= */
+/* 8. "Contact Us" Section Styling (FIXED WHITE BACKGROUND) */
+/* ========================================================================= */
+
+#contact-us {
+    background-color: #FFFFFF; 
+    color: #071629 !important; 
+    padding: 100px 0;
+}
+
+/* Override global H2 rule to make H2 dark on white background */
+#contact-us .section-header h2 {
+    color: #071629 !important; 
+}
+
+.contact-form {
+    max-width: 350px; 
+    margin: 0 auto; 
+    padding-top: 50px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block; 
+    margin-bottom: 5px;
+    font-size: 14px;
+    opacity: 0.8;
+    color: #071629; 
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"] {
+    width: 100%;
+    background: transparent;
+    border: none;
+    /* Change border and input text color to dark-bg */
+    border-bottom: 1px solid #071629; 
+    color: #071629; 
+    padding: 8px 0;
+    font-size: 16px;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-bottom-color: var(--color-primary); 
+}
+
+.contact-form .cta-button {
+    margin-top: 20px;
+}
+
+/* ========================================================================= */
+/* 9. Footer Styling */
+/* ========================================================================= */
+footer {
+    background-color: var(--color-dark-bg);
+    padding: 50px 0 20px 0; 
+    border-top: 1px solid #142841; 
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    margin-bottom: 50px; 
+}
+
+.footer-top .logo img {
+    width: 160px;
+    height: auto;
+}
+
+/* Social Icon Styling: White Icons, No Background */
+.social-links {
+    display: flex;
+    gap: 20px; 
+}
+
+/* Target the wrapper link (<a>) to clear any inherited button styling */
+.social-links a {
+    text-decoration: none;
+    /* AGGRESSIVELY REMOVE all inherited CTA button styling */
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    line-height: 1; 
+    transition: opacity 0.3s ease;
+}
+
+.social-links a:hover {
+    opacity: 0.8; 
+}
+
+/* Target the icon glyph directly to apply white color and size */
+.social-icon-glyph {
+    font-size: 30px; 
+    /* Force white color on the icon itself */
+    color: #FFFFFF !important; 
+    vertical-align: middle;
+}
+
+/* Copyright Styling: Centered at the bottom */
+.copyright {
+    font-size: 14px;
+    opacity: 0.8;
+    text-align: center; 
+}
+
+/* Footer Mobile Styling */
+@media (max-width: 480px) {
+    
+    .footer-top {
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 30px; 
+    }
+    
+    .footer-top .logo {
+        order: 1; 
+    }
+    
+    .social-links {
+        order: 2; 
+        margin-top: 10px;
+    }
+}
